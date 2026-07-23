@@ -1,7 +1,9 @@
-const _ = require('lodash');
+const fs = require('fs')
 
-const items = [1,[2,[3,[4]]]];
-const newItems = _.flattenDeep(items);
+fs.readFile(__filename, () => {
+    console.log("IO");
 
-console.log(newItems);
-console.log("Hello People")
+    setTimeout( () => console.log("Timeout"),0);
+    setImmediate( () => console.log("Immediate"));
+})
+
